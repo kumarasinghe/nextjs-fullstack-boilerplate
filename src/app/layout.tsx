@@ -1,8 +1,7 @@
 import "./globals.scss";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import clsx from "clsx";
+import { FontClass } from "@/utils";
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -16,7 +15,25 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className={inter.className}>{children}</body>
+            <body
+                className={clsx(
+                    "bg-base-50 m-auto grid min-h-screen max-w-screen-xl grid-cols-[auto_1fr] grid-rows-[auto_1fr_auto] px-8 text-foreground",
+                    FontClass.DEFAULT,
+                )}
+            >
+                <header className="col-start-1 col-end-3 bg-gray-300">
+                    Header
+                </header>
+                <aside className="col-start-1 col-end-2 bg-gray-200">
+                    Sidebar
+                </aside>
+                <main className="col-start-2 col-end-3 bg-gray-100 ">
+                    {children}
+                </main>
+                <footer className="col-start-1 col-end-3 bg-gray-300">
+                    Footer
+                </footer>
+            </body>
         </html>
     );
 }
