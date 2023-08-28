@@ -1,3 +1,70 @@
 {
-    "extends": "next/core-web-vitals"
+    "root": true,
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "extends": [
+        /* react rules */
+        "plugin:react/recommended",
+        /* react hooks rules */
+        "plugin:react-hooks/recommended",
+        /* typescript rules */
+        "plugin:@typescript-eslint/recommended",
+        /* additional typescript type checking rules */
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        /* additional strict opinionated typescript rules */
+        "plugin:@typescript-eslint/strict",
+        /* promise related rules */
+        "plugin:promise/recommended",
+        /* airbnb rules */
+        "airbnb",
+        /* airbnb hook rules */
+        "airbnb/hooks",
+        /* airbnb typescript rules */
+        "airbnb-typescript",
+        /* accessibility rules */
+        "plugin:jsx-a11y/strict",
+        /* Next.js rules */
+        "next/core-web-vitals",
+        /* module import rules */
+        "plugin:import/recommended",
+        /* import rules for typescript files */
+        "plugin:import/typescript",
+        /* storybook rules  */
+        "plugin:storybook/recommended",
+        /* disable formatting rules conflicting with prettier */
+        "prettier"
+    ],
+    "overrides": [],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module",
+        /* for airbnb-typescript */
+        "project": "./tsconfig.json"
+    },
+    "plugins": [
+        "react",
+        "react-hooks",
+        "@typescript-eslint",
+        "jsx-a11y",
+        "promise"
+    ],
+    "settings": {
+        /* eslint-import-resolver-typescript */
+        "import/resolver": {
+            "typescript": true,
+            "node": true
+        },
+        /* eslint-plugin-react */
+        "react": {
+            "version": "detect"
+        }
+    },
+    "rules": {
+        "no-console": ["error", { "allow": ["warn", "error", "debug"] }],
+        "import/prefer-default-export": "off",
+        "react/jsx-props-no-spreading": "off"
+    }
 }
