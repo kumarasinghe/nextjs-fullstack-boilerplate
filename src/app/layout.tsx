@@ -2,6 +2,7 @@ import "./globals.scss";
 import type { Metadata } from "next";
 import clsx from "clsx";
 import { FontClass } from "@/utils";
+import Providers from "./providers";
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -21,18 +22,20 @@ export default function RootLayout({
                     FontClass.DEFAULT,
                 )}
             >
-                <header className="col-start-1 col-end-3 bg-gray-300">
-                    Header
-                </header>
-                <aside className="col-start-1 col-end-2 bg-gray-200">
-                    Sidebar
-                </aside>
-                <main className="col-start-2 col-end-3 bg-gray-100 ">
-                    {children}
-                </main>
-                <footer className="col-start-1 col-end-3 bg-gray-300">
-                    Footer
-                </footer>
+                <Providers>
+                    <header className="col-start-1 col-end-3 bg-gray-300">
+                        Header
+                    </header>
+                    <aside className="col-start-1 col-end-2 bg-gray-200">
+                        Sidebar
+                    </aside>
+                    <main className="col-start-2 col-end-3 bg-gray-100 ">
+                        {children}
+                    </main>
+                    <footer className="col-start-1 col-end-3 bg-gray-300">
+                        Footer
+                    </footer>
+                </Providers>
             </body>
         </html>
     );

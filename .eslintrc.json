@@ -31,8 +31,6 @@
         "plugin:import/recommended",
         /* import rules for typescript files */
         "plugin:import/typescript",
-        /* storybook rules  */
-        "plugin:storybook/recommended",
         /* disable formatting rules conflicting with prettier */
         "prettier"
     ],
