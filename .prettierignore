@@ -1,0 +1,6 @@
+node_modules
+.next
+.env*
+*.lock
+db/migrations
+README.md
