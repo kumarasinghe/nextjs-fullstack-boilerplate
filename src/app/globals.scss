@@ -1,9 +1,9 @@
+@import "./theme.scss";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import "./theme.scss";
-
 * {
-    box-sizing: border-box;
+    border-color: hsl(var(--border));
 }
